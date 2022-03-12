@@ -1,10 +1,26 @@
-def num_translate(a):
-    list_num = ['Ноль', 'Один', 'Два', 'Три', 'Четыре', 'Пять', 'Шесть', 'Семь', 'Восемь', 'Девять', 'Десять']
-    for i, s in enumerate(list_num):
-        if a == i:
-            print(s)
+def num_translate_adv(a):
+    list_num = {
+        'Null': 'Ноль',
+        'One': 'Один',
+        'Two': 'Два',
+        'Three': 'Три',
+        'Four': 'Четыре',
+        'Five': 'Пять',
+        'Six': 'Шесть',
+        'Seven': 'Семь',
+        'Eight': 'Восемь',
+        'Nine': 'Девять',
+        'Ten': 'Десять'
+    }
+    for key, value in list_num.items():
+        if a.islower() and a.capitalize() == key:
+            return value.lower()
+        elif a == key:
+            return value
+        else:
+            continue
 
 
-num_translate(6)
+print(num_translate_adv('three'))
 
 
