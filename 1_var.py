@@ -1,5 +1,4 @@
-
-def currency_rates(c):
+def currency_rates(c= str(input('Введите код валюты: '))):
     from requests import get
     response = get('http://www.cbr.ru/scripts/XML_daily.asp')
     rates = response.text
@@ -15,6 +14,3 @@ def currency_rates(c):
             s = (f'{s[index_v+7:]}')
             kurs = float(s.replace(',', '.'))
             print(f'{kurs}, {date_normal}')
-
-c = str(input('Введите код валюты: '))
-currency_rates(c)
