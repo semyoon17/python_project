@@ -1,9 +1,9 @@
 import urllib.request
 from xml.dom import minidom
 
-c = str(input('Введите код '))
 
-def get_currency(c):
+
+def get_currency(c= str(input('Введите код '))):
 
     URL = "http://www.cbr.ru/scripts/XML_daily.asp"
     Webfile = urllib.request.urlopen(URL)
@@ -27,4 +27,3 @@ def get_currency(c):
 
     my_valute = currency_dict.get(c)
     print(my_valute)
-
